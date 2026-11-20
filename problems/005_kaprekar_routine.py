@@ -43,21 +43,10 @@ while True:
         steps += 1
         lth, htl = create_numbers(number)
 
-        lth = add_zeros(lth)
+        lth = add_zeros(lth)s
         htl = add_zeros(htl)
 
-        number = subtract(htl,lth)
+        number = subtract(htl, lth)
         print(f"{htl} - {lth} = {number}")
 
     print(f"Steps: {steps}")
-
-
-
-
-
-
-# Arrange numbers low_to_high
-# Arragne number high_to_low
-# Subtract
-#   6 7 2 4
-# 
