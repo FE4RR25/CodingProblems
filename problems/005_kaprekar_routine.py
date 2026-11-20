@@ -32,21 +32,27 @@ def subtract(htl, lth):
     return str(new)
 
 def add_zeros(num):
-    if len(num) != 4 and len(num) < 4:
-        num.append("0")
+    while len(num) < 4:
+        num = "0" + num
+        print(f"added zero: {num}")
     return num
 
+
+number = input("Input a Number >")
+steps = 0
+
 while True:
-    number = input("Input a Number > ")
-    steps = 0
-    while number != "6174":
-        steps += 1
-        lth, htl = create_numbers(number)
+    if number == "6174":
+        break
 
-        lth = add_zeros(lth)s
-        htl = add_zeros(htl)
+    number = add_zeros(number)
 
-        number = subtract(htl, lth)
-        print(f"{htl} - {lth} = {number}")
+    if len(set(number)) == 1:
+        break
 
-    print(f"Steps: {steps}")
+    step += 1
+    lth, htl = create_numbers(number)
+    number = subtract(htl, lth)
+    print(f"{htl} - {lth} = {number}")
+
+print(f"Steps: {steps}")
